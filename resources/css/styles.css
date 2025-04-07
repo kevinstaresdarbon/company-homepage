@@ -51,7 +51,7 @@ header {
     align-items: center;
     width: 97vw;
     height: 600px;
-    background-image: url("/resources/images/colorado-hills.jpg");
+    background-image: url("../images/colorado-hills.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
