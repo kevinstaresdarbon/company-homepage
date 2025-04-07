@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    width: 97vw;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+
+    & nav {
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(188, 114, 231);
+        width: 97vw;
+        height: 6rem;
+        border-bottom: 3px solid black;
+
+        & ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        justify-items: center;
+
+            & li {
+                display: inline-block;
+                margin: 1.5rem;
+                font-size: 2rem; 
+            }
+        }
+    }
+}
+
+#mission{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97vw;
+    height: 600px;
+    background-image: url("/resources/images/colorado-hills.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .statement {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        background-color: antiquewhite;
+        height: 60%;
+        width: 70%;
+        border-radius: 12px;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        text-align: center;
+        opacity: 0.8;
+        z-index: 3;
+
+        & p {
+            width: 90%;
+        }
+
+        & span {
+            font-weight: 700;
+        }
+    }
+}
+
+#destinations {
+
+    padding: 2rem 0;
+    background-color: rgb(188, 114, 231);
+    height: fit-content;
+    width: 97vw;
+
+    & .destinations-title-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 97vw;
+
+        & h1 {
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+
+        & p {
+            font-size: 1.2rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+    }
+
+    & .destinations-grid{
+
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    
+        width: 97vw;
+        height: 37vw;
+
+        justify-items: center;
+        align-items: center;
+    
+        & .destination-card {
+
+            width: 90%;
+            cursor: pointer;
+
+            & figure {
+                position: relative;
+
+                & img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: center;
+                    overflow: hidden;
+                }
+
+                & figcaption {
+                    position: absolute;
+                    top: 3rem;
+                    left: 3rem;
+                    background-color: white;
+                    font-size: 1.2rem;
+                    border-radius: 4px;
+                    padding: 0.5rem;
+                    text-align: center;
+                }
+            }
+               
+        }
+    }
+}
+
+#leaders {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    background-color: antiquewhite;
+    padding: 2rem 0;
+    width: 97vw;
+
+    & .leaders-title {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & h1 {
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            text-align: center;
+    
+        }
+    
+        & p {
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+    }
+  
+
+    & .leaders-grid {
+        display: grid;
+        grid-template: 600px / repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        width: 97vw;
+        border: 2px solid black;
+        border-radius: 8px;
+
+        & .leaders-card {
+            width: 80%;
+            height: 500px;
+            border: 2px solid black;
+            border-top-left-radius: 4rem;
+            cursor: pointer;
+
+            & img {
+                padding: 2rem 0;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                object-position: center;
+                overflow: hidden;
+                border-top-left-radius: 4rem;
+                border-bottom-right-radius: 5rem;
+            }
+
+            & figcaption {
+                font-size: 1.5rem;
+                line-height: 1.4;
+                font-weight: 600;
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 471px) and (max-width: 1023px){
+
+    header nav ul li{
+        font-size: 1.2rem;
+    }
+
+    #mission {
+
+        & .statement {
+            font-size: 1.2rem;
+            height: 85%;
+        }
+    }
+
+    #destinations {
+
+        & .destinations-grid {
+            grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+            height: max-content;
+
+            & .destination-card{
+
+                & figure {
+                    
+                    & figcaption {
+                        position: absolute;
+                        top: 2rem;
+                        left: 2rem;
+                        background-color: white;
+                        font-size: 1.2rem;
+                        border-radius: 4px;
+                        padding: 0.25rem;
+                    }
+                }
+            } 
+        }
+    }
+
+    #leaders {
+        
+        & .leaders-grid {
+
+            & .leaders-card {
+
+                & figure {
+
+                    & figcaption {
+                        font-size: 1.2rem;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    
+    header nav ul li{
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    #mission {
+
+        & .statement {
+            font-size: 1rem;
+            height: 85%;
+        }
+    }
+
+    #destinations {
+
+        & .destinations-grid {
+            grid-template: repeat(6, 1fr) / repeat(1, 1fr);
+            height: max-content;
+
+            & .destination-card{
+
+                & figure {
+                    
+                    & figcaption {
+                        position: absolute;
+                        top: 2rem;
+                        left: 2rem;
+                        background-color: white;
+                        font-size: 1.2rem;
+                        border-radius: 4px;
+                        padding: 0.25rem;
+                    }
+                }
+            } 
+        }
+    }
+
+    #leaders {
+        
+        & .leaders-title h1 {
+            font-size: 2rem;
+        }
+
+        & .leaders-title p {
+            font-size: 1.2rem;
+        }
+
+        & .leaders-grid {
+
+            & .leaders-card {
+
+                & figure {
+
+                    & figcaption {
+                        font-size: 1rem;
+                        line-height: 1.2;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}
